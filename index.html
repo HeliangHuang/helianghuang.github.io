@@ -169,6 +169,14 @@
     #home .content p, #home .content em{color:var(--muted);}
     /* Chinese intro: justify both ends */
     #cn .content p{text-align:justify;text-justify:inter-ideograph;}
+    /* Research Interests — labeled topic list */
+    .ri-intro{color:var(--muted);font-size:16px;line-height:1.85;margin:2px 0 4px;}
+    .ri-list{margin:4px 0 16px;color:var(--muted);font-size:15px;line-height:1.95;}
+    .ri-list a{font-weight:500;}
+    .ri-label{font-weight:400;}
+    .ri-label::before{content:"";display:inline-block;width:5px;height:5px;box-sizing:border-box;border:1.5px solid var(--muted);border-radius:50%;background:transparent;margin:0 9px 1px 0;vertical-align:middle;}
+    .ri-label em{font-style:normal;font-weight:400;color:var(--muted);}
+    .content img.ri-fig{width:100%;max-width:520px;height:auto;display:block;margin:6px 0 18px;border-radius:12px;box-shadow:var(--shadow-sm);}
 
     /* ---------- Publications ---------- */
     ol.pubs{padding-left:22px;margin:0;}
@@ -336,35 +344,32 @@
 
     <h2 class="sec">Research Interests</h2>
     <div class="content">
-      <h4><strong>Near-Term Quantum Techniques</strong></h4>
-      <img src="images/nearterm.png" style="width:96%">
-      <p><em>
-        <a href="https://link.springer.com/article/10.1007/s11433-022-2057-y">See our review</a> | Variational quantum algorithms: <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.024051">Quantum GAN</a>, <a href="https://link.springer.com/article/10.1007/s11433-021-1734-3">QCNN</a> | Quantum error mitigation: <a href="https://link.springer.com/article/10.1007/s11433-022-2005-x">Compression readout</a>, <a href="https://www.nature.com/articles/s42005-024-01815-2">CNR VD</a> | Classical simulation: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.070502">Tensor network states algorithm</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3458817.3487399">ACM Gordon Bell Prize: Closing the "quantum supremacy" gap</a>
-      </em></p>
+      
+      <p class="ri-intro">Our research focuses on how to turn quantum computational advantage into practical quantum computing (see <a href="https://link.springer.com/article/10.1007/s11433-022-2057-y">our review</a> and perspective)</p> 
+      <h4><strong>Quantum Advantage: Can quantum computers compute faster?</strong></h4>
+      <img src="images/superconducting.png" class="ri-fig" alt="Superconducting quantum processor">
+      <p class="ri-list">
+        <span class="ri-label">See our review</span>: <a href="https://link.springer.com/article/10.1007/s11432-020-2881-9">Superconducting quantum computing</a>, <a href="http://www.cqvip.com/qk/72202x/20171/671120413.html">Linear optical quantum computing</a><br>
+        <span class="ri-label">Quantum computational advantage on Zuchongzhi processor <em>(Lead the theoretical work)</em></span>: <a href="https://spj.science.org/doi/full/10.34133/icomputing.0079">High complexity random quantum circuits</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.180501">56-qubit 20-cycle</a>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S2095927321006733">60-qubit 24-cycle</a><br>
+        <span class="ri-label">Quantum communication complexity advantage</span>: <a href="https://journals.aps.org/prl/accepted/6307bY5bD2211c80d8317ae1ec3a591ab7e671d14">Data storage</a><br>
+        <span class="ri-label">Classical simulation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.070502">Tensor network states algorithm</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3458817.3487399">ACM Gordon Bell Prize: Closing the &quot;quantum supremacy&quot; gap</a>
+      </p>
 
-      <h4><strong>The Physical Implementation of Quantum Computing Architectures</strong></h4>
-      <img src="images/superconducting.png" style="width:60%">
-      <p><em>
-        See our review: <a href="https://link.springer.com/article/10.1007/s11432-020-2881-9">Superconducting quantum computing</a>, <a href="http://www.cqvip.com/qk/72202x/20171/671120413.html">Linear optical quantum computing</a> | Quantum computational advantage on Zuchongzhi processor: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.180501">56-qubit 20-cycle</a>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S2095927321006733">60-qubit 24-cycle</a> | <a href="https://journals.aps.org/prl/accepted/6307bY5bD2211c80d8317ae1ec3a591ab7e671d14">Quantum advantage in data storage</a> | <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.210502">Ten-photon entanglement</a> | <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.260502">18-qubit entanglement</a>
-      </em></p>
+      <h4><strong>Quantum Error Correction & Mitigation: Can they compute reliably?</strong></h4>
+      <img src="images/errorcorrection.png" class="ri-fig" alt="Quantum error correction">
+      <p class="ri-list">
+        <span class="ri-label">Logical memory</span>: <a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-6-3-264&id=406811">Nine-qubit planar code</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.030501">d=3 surface code</a>, <a href="https://www.nature.com/articles/s41534-025-01023-y">Bandage-like super-stabilizers for defect</a><br>
+        <span class="ri-label">Logical operation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.090502">Logical qubit teleportation</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.210603">Magic state preparation</a><br>
+        <span class="ri-label">Quantum error mitigation</span>: <a href="https://link.springer.com/article/10.1007/s11433-022-2005-x">Compression readout</a>, <a href="https://www.nature.com/articles/s42005-024-01815-2">CNR VD</a>, Quantum sampling, <a href="https://arxiv.org/abs/2501.04558">Physics-Inspired MLQEM</a>
+      </p>
 
-      <h4><strong>Quantum Error Correction</strong></h4>
-      <img src="images/errorcorrection.png" style="width:70%">
-      <p><em>
-        <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.030501">d=3 surface code</a> | <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.090502">Logical qubit teleportation</a> | <a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-6-3-264&id=406811">Nine-qubit planar code</a> | <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.210603">Magic state with fidelity beyond the distillation threshold</a>
-      </em></p>
+      <h4><strong>Practical Applications: Can they solve useful problems?</strong></h4>
+      <img src="images/quantumalgorithm.png" class="ri-fig" alt="Practical applications">
+      <p class="ri-list">
+        <span class="ri-label">AI x Quantum (Quantum AI | AI4Quantum)</span>: Classical surrogate for improving quantum efficiency (in <a href="https://www.nature.com/articles/s41467-026-72506-5">VQA, quantum simulation</a> and <a href="https://arxiv.org/abs/2511.07092">error mitigation</a>), <a href="https://ieeexplore.ieee.org/abstract/document/9451546/">Quantum-inspired SVM</a>, <a href="https://opg.optica.org/optica/viewmedia.cfm?uri=optica-5-2-193&html=true">Topological Data Analysis</a>, <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.024051">Quantum GAN</a>, <a href="https://link.springer.com/article/10.1007/s11433-021-1734-3">QCNN</a><br>
+        <span class="ri-label">Secure Cloud Quantum Computing</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.050503">Blind quantum computing</a>
+      </p>
 
-      <h4><strong>Quantum Algorithms/Protocols</strong></h4>
-      <img src="images/quantumalgorithm.png" style="width:100%">
-      <p><em>
-        Quantum Machine Learning: <a href="https://ieeexplore.ieee.org/abstract/document/9451546/">Quantum-inspired SVM</a>, <a href="https://opg.optica.org/optica/viewmedia.cfm?uri=optica-5-2-193&html=true">Topological Data Analysis</a> | Secure Cloud Quantum Computing: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.050503">Blind quantum computing</a>
-      </em></p>
-
-      <h4><strong>Quantum Foundations</strong></h4>
-      <img src="images/dragon.png" style="width:60%">
-      <p><em>
-        <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.012114">Loophole-free delayed choice</a>
-      </em></p>
     </div>
   </section>
 
@@ -617,6 +622,12 @@
   <section id="opensource">
     <h2 class="sec">Open Source</h2>
     <div class="os">
+      <div class="os-cat">
+        <h4>Quantum Computational Adavantage</h4>
+        <ul class="os-list">
+          <li><a href="https://github.com/USTC-Quantum-Supremacy/cutline"><strong>High complexity random quantum circuits design</strong></a></li>
+        </ul>
+      </div>
       <div class="os-cat">
         <h4>Quantum Error Correction</h4>
         <ul class="os-list">
