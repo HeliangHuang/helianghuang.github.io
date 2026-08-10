@@ -157,7 +157,7 @@
     ul.plain{list-style:disc;padding-left:22px;color:var(--fg);font-weight:400;font-size:16px;}
     ul.plain li{margin-bottom:10px;line-height:1.85;}
     .note{color:var(--muted);font-size:14px;margin:0 0 16px;}
-    .content h4{
+    #home .content h4{
       font-family:var(--display);font-size:19px;font-weight:700;
       margin:30px 0 12px;color:var(--accent);
       padding-left:13px;border-left:3px solid var(--accent);line-height:1.4;
@@ -171,12 +171,17 @@
     #cn .content p{text-align:justify;text-justify:inter-ideograph;}
     /* Research Interests — labeled topic list */
     .ri-intro{color:var(--muted);font-size:16px;line-height:1.85;margin:2px 0 4px;}
-    .ri-list{margin:4px 0 16px;color:var(--muted);font-size:15px;line-height:1.95;}
-    .ri-list a{font-weight:500;}
-    .ri-label{font-weight:400;}
-    .ri-label::before{content:"";display:inline-block;width:5px;height:5px;box-sizing:border-box;border:1.5px solid var(--muted);border-radius:50%;background:transparent;margin:0 9px 1px 0;vertical-align:middle;}
+    .ri-list{list-style:none;padding:2px 0 0;margin:6px 0 20px;color:var(--muted);font-size:15px;line-height:1.43;}
+    .ri-list li{position:relative;padding:0 0 9.75px 22px;}
+    .ri-list li:last-child{padding-bottom:0;}
+    .ri-list li::before{content:"";position:absolute;left:2px;top:0.95em;bottom:-3px;width:2px;background:var(--border);}
+    .ri-list li:last-child::before{display:none;}
+    .ri-list li::after{content:"";position:absolute;left:0;top:calc(0.95em - 3px);width:6px;height:6px;border-radius:50%;background:var(--muted);box-sizing:border-box;}
+    .ri-list a{font-weight:500;color:var(--muted);}
+    .ri-list a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:2px;}
+    .ri-label{font-weight:400;color:var(--accent);}
     .ri-label em{font-style:normal;font-weight:400;color:var(--muted);}
-    .content img.ri-fig{width:100%;max-width:520px;height:auto;display:block;margin:6px 0 18px;border-radius:12px;box-shadow:var(--shadow-sm);}
+    .content img.ri-fig{width:100%;max-width:520px;height:auto;display:block;margin:6px 0 18px;border-radius:0;box-shadow:0 10px 26px rgba(20,30,55,.16);}
 
     /* ---------- Publications ---------- */
     ol.pubs{padding-left:22px;margin:0;}
@@ -343,34 +348,33 @@
     </div>
 
     <h2 class="sec">Research Interests</h2>
-    <div class="content">
-      
-      <p class="ri-intro">Our research focuses on how to turn quantum computational advantage into practical quantum computing (see <a href="https://link.springer.com/article/10.1007/s11433-022-2057-y">our review</a> and perspective)</p> 
+        <div class="content">
+      <p class="ri-intro">Our research focuses on how to turn quantum computational advantage into practical quantum computing (see <a href="https://link.springer.com/article/10.1007/s11433-022-2057-y">our review</a> and perspective)</p>
+
       <h4><strong>Quantum Advantage: Can quantum computers compute faster?</strong></h4>
-      <img src="images/superconducting.png" class="ri-fig" alt="Superconducting quantum processor">
-      <p class="ri-list">
-        <span class="ri-label">See our review</span>: <a href="https://link.springer.com/article/10.1007/s11432-020-2881-9">Superconducting quantum computing</a>, <a href="http://www.cqvip.com/qk/72202x/20171/671120413.html">Linear optical quantum computing</a><br>
-        <span class="ri-label">Quantum computational advantage on Zuchongzhi processor <em>(Lead the theoretical work)</em></span>: <a href="https://spj.science.org/doi/full/10.34133/icomputing.0079">High complexity random quantum circuits</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.180501">56-qubit 20-cycle</a>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S2095927321006733">60-qubit 24-cycle</a><br>
-        <span class="ri-label">Quantum communication complexity advantage</span>: <a href="https://journals.aps.org/prl/accepted/6307bY5bD2211c80d8317ae1ec3a591ab7e671d14">Data storage</a><br>
-        <span class="ri-label">Classical simulation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.070502">Tensor network states algorithm</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3458817.3487399">ACM Gordon Bell Prize: Closing the &quot;quantum supremacy&quot; gap</a>
-      </p>
+      <img src="images/QuantumAdvantage.png" class="ri-fig" alt="Superconducting quantum processor">
+      <ul class="ri-list">
+        <li><span class="ri-label">See our review</span>: <a href="https://link.springer.com/article/10.1007/s11432-020-2881-9">Superconducting quantum computing</a>, <a href="http://www.cqvip.com/qk/72202x/20171/671120413.html">Linear optical quantum computing</a></li>
+        <li><span class="ri-label">Quantum computational advantage on Zuchongzhi processor <em>(Lead the theoretical work)</em></span>: <a href="https://spj.science.org/doi/full/10.34133/icomputing.0079">High complexity random quantum circuits</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.180501">56-qubit 20-cycle</a>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S2095927321006733">60-qubit 24-cycle</a></li>
+        <li><span class="ri-label">Quantum communication complexity advantage</span>: <a href="https://journals.aps.org/prl/accepted/6307bY5bD2211c80d8317ae1ec3a591ab7e671d14">Data storage</a></li>
+        <li><span class="ri-label">Classical simulation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.070502">Tensor network states algorithm</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3458817.3487399">Gordon Bell Prize: Closing the &quot;quantum supremacy&quot; gap</a></li>
+      </ul>
 
       <h4><strong>Quantum Error Correction & Mitigation: Can they compute reliably?</strong></h4>
-      <img src="images/errorcorrection.png" class="ri-fig" alt="Quantum error correction">
-      <p class="ri-list">
-        <span class="ri-label">Logical memory</span>: <a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-6-3-264&id=406811">Nine-qubit planar code</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.030501">d=3 surface code</a>, <a href="https://www.nature.com/articles/s41534-025-01023-y">Bandage-like super-stabilizers for defect</a><br>
-        <span class="ri-label">Logical operation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.090502">Logical qubit teleportation</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.210603">Magic state preparation</a><br>
-        <span class="ri-label">Quantum error mitigation</span>: <a href="https://link.springer.com/article/10.1007/s11433-022-2005-x">Compression readout</a>, <a href="https://www.nature.com/articles/s42005-024-01815-2">CNR VD</a>, Quantum sampling, <a href="https://arxiv.org/abs/2501.04558">Physics-Inspired MLQEM</a>
-      </p>
+      <img src="images/QuantumErrorCorrection.png" class="ri-fig" alt="Quantum error correction">
+      <ul class="ri-list">
+        <li><span class="ri-label">Logical memory</span>: <a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-6-3-264&id=406811">Nine-qubit planar code</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.030501">d=3 surface code</a>, <a href="https://www.nature.com/articles/s41534-025-01023-y">Bandage-like super-stabilizers for defect</a></li>
+        <li><span class="ri-label">Logical operation</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.090502">Logical qubit teleportation</a>, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.210603">Magic state preparation</a></li>
+        <li><span class="ri-label">Quantum error mitigation</span>: <a href="https://link.springer.com/article/10.1007/s11433-022-2005-x">Compression readout</a>, <a href="https://www.nature.com/articles/s42005-024-01815-2">CNR VD</a>, Quantum sampling, <a href="https://arxiv.org/abs/2501.04558">Physics-Inspired MLQEM</a></li>
+      </ul>
 
       <h4><strong>Practical Applications: Can they solve useful problems?</strong></h4>
-      <img src="images/quantumalgorithm.png" class="ri-fig" alt="Practical applications">
-      <p class="ri-list">
-        <span class="ri-label">AI x Quantum (Quantum AI | AI4Quantum)</span>: Classical surrogate for improving quantum efficiency (in <a href="https://www.nature.com/articles/s41467-026-72506-5">VQA, quantum simulation</a> and <a href="https://arxiv.org/abs/2511.07092">error mitigation</a>), <a href="https://ieeexplore.ieee.org/abstract/document/9451546/">Quantum-inspired SVM</a>, <a href="https://opg.optica.org/optica/viewmedia.cfm?uri=optica-5-2-193&html=true">Topological Data Analysis</a>, <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.024051">Quantum GAN</a>, <a href="https://link.springer.com/article/10.1007/s11433-021-1734-3">QCNN</a><br>
-        <span class="ri-label">Secure Cloud Quantum Computing</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.050503">Blind quantum computing</a>
-      </p>
-
-    </div>
+      <img src="images/PracticalApplications.png" class="ri-fig" alt="Practical applications">
+      <ul class="ri-list">
+        <li><span class="ri-label">AI x Quantum (Quantum AI | AI4Quantum)</span>: Classical surrogate for improving quantum efficiency (in <a href="https://www.nature.com/articles/s41467-026-72506-5">VQA, quantum simulation</a> and <a href="https://arxiv.org/abs/2511.07092">error mitigation</a>), <a href="https://ieeexplore.ieee.org/abstract/document/9451546/">Quantum-inspired SVM</a>, <a href="https://opg.optica.org/optica/viewmedia.cfm?uri=optica-5-2-193&html=true">Topological Data Analysis</a>, <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.16.024051">Quantum GAN</a>, <a href="https://link.springer.com/article/10.1007/s11433-021-1734-3">QCNN</a></li>
+        <li><span class="ri-label">Secure Cloud Quantum Computing</span>: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.050503">Blind quantum computing</a></li>
+      </ul>
+</div>
   </section>
 
   <!-- News -->
